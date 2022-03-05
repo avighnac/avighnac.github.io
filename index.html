@@ -9,12 +9,54 @@
 </head>
 
 <body>
+    <h1>Pascal's Triangle</h1>
+    <form>
+        Number of Rows: <input id="number" type="number" name="number"> <br>
+    </form>
+    <button type="button" onclick="pascals_triangle();"> Submit </button>
+    <p id="output"></p>
+    Or, use a C++ application to do this offline.
+    <br> <br>
+    <a href="">Source Code</a>
+    <br>
+    <a href="">Windows</a>
+    <br>
+    <a href="">Linux</a>
+
     <script>
-        let nums = [1, 2, 3, 4, 5]
-        nums.forEach(e => {
-            console.log(e)
-        })
+        function pascals_triangle() {
+            let e = document.getElementById("number").value;
+            let r = e
+            let pt = [
+                [1],
+                [1, 1]
+            ]
+            let n = r;
+
+            for (let r = 1; r < n - 1; r++) {
+                let row = [1];
+                for (let e = 1; e <= r; e++)
+                    row.push(pt[r][e - 1] + pt[r][e]);
+                row.push(1);
+                pt.push(row);
+            }
+
+            let output = "";
+            if (e <= 0) {
+                output = "Please enter a number greater than 0.";
+            } else if (e == 1)
+                output = "1"
+            else {
+                for (let r = 0; r < pt.length; r++) {
+                    for (let e = 0; e < pt[r].length; e++)
+                        output += pt[r][e] + " ";
+                    output += "<br>";
+                }
+            }
+            document.getElementById("output").innerHTML = output;
+        }
     </script>
+
 </body>
 
 </html>
