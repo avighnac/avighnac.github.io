@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tribonacci Sequence</title>
+</head>
+
+<body style="background: lightpink;">
+    <h1>Tribonacci Sequence</h1>
+    <form>
+        Signature: <input id="signature" type="string" name="signature"> <br>
+    </form>
+    <form>
+        Number of Elements: <input id="number" type="number" name="number"> <br>
+    </form>
+    <button type="button" onclick="tribonacci_sequence();">Submit</button>
+    <p id="output"></p>
+    Or, use a C++ application to do this offline.
+    <br> <br>
+    <a
+        href="https://raw.githubusercontent.com/avighnac/avighnac.github.io/main/cpp-applications/Tribonacci%20Sequence/tribonacci_sequence.cpp">Source
+        Code</a>
+    <br>
+    <a
+        href="https://raw.githubusercontent.com/avighnac/avighnac.github.io/main/cpp-applications/Tribonacci%20Sequence/tribonacci_sequence-windows.exe">Windows</a>
+    <br>
+    <a
+        href="https://raw.githubusercontent.com/avighnac/avighnac.github.io/main/cpp-applications/Tribonacci%20Sequence/tribonacci_sequence-linux">Linux</a>
+
+    <script>
+        function tribonacci_sequence() {
+            let signature = document.getElementById("signature").value;
+            let n = document.getElementById("number").value;
+            let signatureArr = signature.split(' ');
+            let output = ''
+
+            let answer = [];
+            if (n == 0)
+                output = 'Please enter a number greater than 0.'
+            else if (n == 1)
+                output = signatureArr[0]
+            else if (n == 2) {
+                output = signatureArr[0] + ' ' + signatureArr[1]
+            } else {
+                for (let i = 0; i < n - 3; i++)
+                    signatureArr.push(Number.parseInt(signatureArr[signatureArr.length - 1])
+                        + Number.parseInt(signatureArr[signatureArr.length - 2])
+                        + Number.parseInt(signatureArr[signatureArr.length - 3]));
+                signatureArr.forEach(e => { output += e + ' ' })
+            }
+
+            document.getElementById("output").innerHTML = output
+        }
+    </script>
+</body>
+
+</html>
