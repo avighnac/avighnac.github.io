@@ -1,0 +1,21 @@
+body {
+    background-color: #1F1F23;
+}
+
+h1 {
+    color: #c9cccac4;
+}
+
+p {
+    color: #c9cccac4;
+}
+
+.button {
+    background-color: #2D2D31;
+    color: #80C7B8;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    padding: 5px;
+    font-weight: bold;
+}

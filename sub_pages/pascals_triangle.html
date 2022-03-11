@@ -6,26 +6,33 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Do people read this?</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
 
-<body style="background: peachpuff;">
+<body>
     <h1>Pascal's Triangle</h1>
     <form>
-        Number of Rows: <input id="number" type="number" name="number"> <br>
+        <p style="display: inline;">
+            Number of Rows: <input id="number" type="number" style="border-radius: 5px; border: none;"> <br>
+        </p>
     </form>
-    <button type="button" onclick="pascals_triangle();"> Submit </button>
+    <button class="button" onclick="pascals_triangle();"> Submit </button>
     <p id="output"></p>
-    Or, use a C++ application to do this offline.
-    <br> <br>
-    <a
-        href="https://raw.githubusercontent.com/avighnac/avighnac.github.io/main/cpp-applications/Pascal's%20Triangle/pascals_triangle.cpp">Source
-        Code</a>
-    <br>
-    <a
-        href="https://raw.githubusercontent.com/avighnac/avighnac.github.io/main/cpp-applications/Pascal's%20Triangle/pascals_triangle-windows.exe">Windows</a>
-    <br>
-    <a
-        href="https://raw.githubusercontent.com/avighnac/avighnac.github.io/main/cpp-applications/Pascal's%20Triangle/pascals_triangle-linux">Linux</a>
+    <p>
+        Or, use a C++ application to do this offline.
+
+        <br> <br>
+        <a
+            href="https://raw.githubusercontent.com/avighnac/avighnac.github.io/main/cpp-applications/Pascal's%20Triangle/pascals_triangle.cpp">Source
+            Code</a>
+        <br>
+        <a
+            href="https://raw.githubusercontent.com/avighnac/avighnac.github.io/main/cpp-applications/Pascal's%20Triangle/pascals_triangle-windows.exe">Windows</a>
+        <br>
+        <a
+            href="https://raw.githubusercontent.com/avighnac/avighnac.github.io/main/cpp-applications/Pascal's%20Triangle/pascals_triangle-linux">Linux</a>
+    </p>
 
     <script>
         function pascals_triangle() {
